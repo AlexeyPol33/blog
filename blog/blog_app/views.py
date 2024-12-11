@@ -8,11 +8,11 @@ def post_detail(request,id):
                              id=id,
                              status=Post.Status.PUBLISHED)
     return render(request,
-                  'blog_app/post/detail.html',
+                  'blog_app/templates/post/detail.html',
                   {'post': post})
 
 def post_list(request):
     posts = Post.published.all()
     return render(request,
-                  'blog_app/post/list.html',
+                  'blog/post/list.html',
                   {'posts': posts})

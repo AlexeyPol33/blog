@@ -8,7 +8,7 @@ def post_detail(request,id):
                              id=id,
                              status=Post.Status.PUBLISHED)
     return render(request,
-                  'blog_app/templates/post/detail.html',
+                  'blog/post/detail.html',
                   {'post': post})
 
 def post_list(request):

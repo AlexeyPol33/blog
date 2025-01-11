@@ -68,8 +68,10 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': getenv('DB_ENGINE', 'django.db.backends.postgresql'),
+        'NAME': getenv('DB_NAME','blog'),
+        'USER': getenv('DB_USER','postgres'),
+        'PASSWORD': getenv('DB_PASSWORD', 'postgres'),
     }
 }
 
